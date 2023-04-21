@@ -1,4 +1,4 @@
-USE [GymTec2]
+USE [GymTec]
 GO
 
 INSERT INTO Workstation (id, role, description) 

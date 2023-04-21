@@ -1,7 +1,7 @@
 use master
 go
-IF NOT EXISTS(SELECT name FROM master.dbo.sysdatabases WHERE NAME = 'GymTec2')
-CREATE DATABASE GymTec2
+IF NOT EXISTS(SELECT name FROM master.dbo.sysdatabases WHERE NAME = 'GymTec')
+CREATE DATABASE GymTec
 
 GO 
 
