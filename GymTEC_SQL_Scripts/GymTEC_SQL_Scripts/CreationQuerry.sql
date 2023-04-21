@@ -1,11 +1,11 @@
 use master
 go
-IF NOT EXISTS(SELECT name FROM master.dbo.sysdatabases WHERE NAME = 'GymTec')
-CREATE DATABASE GymTec
-drop DATABASE GymTec
+IF NOT EXISTS(SELECT name FROM master.dbo.sysdatabases WHERE NAME = 'GymTec2')
+CREATE DATABASE GymTec2
+
 GO 
 
-USE GymTec
+USE GymTec2
 
 GO
 
@@ -41,10 +41,11 @@ go
 if not exists (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'Workstation')
 create table Workstation(
 id char(2) not null,
-role nvarchar(15) not null,
+role nvarchar(25) not null,
 description nvarchar(150),
 primary key(id)
 )
+
 
 go
 
@@ -78,7 +79,7 @@ if not exists (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo
 create table Service(
 service_id char(2) not null,
 service_type nvarchar(20) not null,
-service_name nvarchar(15) not null,
+service_name nvarchar(30) not null,
 primary key(service_id)
 )
 
