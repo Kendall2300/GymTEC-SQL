@@ -61,5 +61,8 @@ alter table Product
 add constraint Product_Branch_Name_FK foreign key (branch_name)
 REFERENCES Shop(branch_name);
 
+alter table Service
+add constraint Service_Branch_Name_FK foreign key (branch_name)
+REFERENCES Branch(branch_name);
 
 
