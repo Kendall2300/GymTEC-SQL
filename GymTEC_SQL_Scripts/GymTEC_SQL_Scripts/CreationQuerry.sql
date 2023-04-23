@@ -99,7 +99,7 @@ go
 
 if not exists (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'Spa')
 create table Spa(
-branch_name int not null,
+branch_name nvarchar(15) not null,
 status char not null,
 treatment_id int not null,
 primary key(branch_name)
@@ -110,7 +110,7 @@ go
 
 if not exists (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'Shop')
 create table Shop(
-branch_name int not null,
+branch_name nvarchar(15) not null,
 status char not null,
 gear_id int not null,
 primary key(branch_name)

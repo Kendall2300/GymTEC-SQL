@@ -1,5 +1,6 @@
 use master
 go
+
 USE GymTec
 
 GO
@@ -18,7 +19,7 @@ REFERENCES Employee(id);
 
 alter table Inventory
 add constraint Inventory_Gear_ID_FK foreign key (gear_id)
-REFERENCES Gear_avaible(gear_id);
+REFERENCES Gear_avalible(gear_id);
 
 alter table Spa
 add constraint Spa_Branch_FK foreign key (branch_name)
@@ -51,3 +52,7 @@ REFERENCES Client(client_id);
 alter table Client_lesson
 add constraint Client_Lesson_lesson_id_FK foreign key (lesson_id)
 REFERENCES Lesson(lesson_id);
+
+alter table Branch_Phone
+add constraint Branch_Phone_Branch_Name_FK foreign key (Branch_name)
+REFERENCES Branch(branch_name);
