@@ -5,7 +5,7 @@ USE GymTec
 GO
 
 alter table Employee
-add constraint Workstation_ID_FK foreign key (Workstation_id)
+add constraint Workstation_ID_FK foreign key (Workstaion_id)
 REFERENCES Workstation(id);
 
 alter table Employee

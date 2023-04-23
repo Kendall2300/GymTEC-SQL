@@ -1,11 +1,12 @@
 use master
 go
+
 IF NOT EXISTS(SELECT name FROM master.dbo.sysdatabases WHERE NAME = 'GymTec')
 CREATE DATABASE GymTec
 
 GO 
 
-USE GymTec2
+USE GymTec
 
 GO
 
@@ -22,7 +23,7 @@ Sname nvarchar(15),
 FLname nvarchar(15) not null,
 SLname nvarchar(15) not null,
 Workstaion_id char(2) not null,
-form_id int not null, 
+form_id char(2) not null, 
 primary key(id)
 )
 
