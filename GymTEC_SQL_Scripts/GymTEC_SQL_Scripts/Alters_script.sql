@@ -22,15 +22,11 @@ add constraint Inventory_Gear_ID_FK foreign key (gear_id)
 REFERENCES Gear_avalible(gear_id);
 
 alter table Spa
-add constraint Spa_Branch_FK foreign key (branch_name)
+add constraint Spa_Branch_Name_FK foreign key (branch_name)
 REFERENCES Branch(branch_name);
 
-alter table Spa
-add constraint Spa_Treatment_FK foreign key (treatment_id)
-REFERENCES Treatment(treatment_id);
-
 alter table Shop
-add constraint Shop_Branch_FK foreign key (branch_name)
+add constraint Shop_Branch_Name_FK foreign key (branch_name)
 REFERENCES Branch(branch_name);
 
 alter table Lesson
@@ -54,5 +50,16 @@ add constraint Client_Lesson_lesson_id_FK foreign key (lesson_id)
 REFERENCES Lesson(lesson_id);
 
 alter table Branch_Phone
-add constraint Branch_Phone_Branch_Name_FK foreign key (Branch_name)
+add constraint Branch_Phone_Branch_Name_FK foreign key (branch_name)
 REFERENCES Branch(branch_name);
+
+alter table Treatment
+add constraint Treatment_Branch_Name_FK foreign key (branch_name)
+REFERENCES Spa(branch_name);
+
+alter table Product
+add constraint Product_Branch_Name_FK foreign key (branch_name)
+REFERENCES Shop(branch_name);
+
+
+

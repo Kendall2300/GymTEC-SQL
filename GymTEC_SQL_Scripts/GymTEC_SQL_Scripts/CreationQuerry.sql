@@ -31,10 +31,9 @@ go
 
 if not exists (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'Branch_Phone')
 create table Branch_Phone(
-Branch_name nvarchar(15) not null,
-Phone char(8),
-Phone2 char(8),
-primary key(Branch_name)
+branch_name nvarchar(15) not null,
+phone char(8),
+primary key(branch_name, phone)
 )
 
 go
@@ -81,7 +80,8 @@ create table Service(
 service_id char(2) not null,
 service_type nvarchar(20) not null,
 service_name nvarchar(30) not null,
-primary key(service_id)
+branch_name nvarchar(15) not null,
+primary key(service_id, branch_name)
 )
 
 go
@@ -156,10 +156,10 @@ go
 
 if not exists (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'Treatment')
 create table Treatment(
-treatment_id int not null,
+branch_name nvarchar(15) not null,
 name nvarchar(12) not null,
 description nvarchar(120),
-primary key(treatment_id)
+primary key(name, branch_name)
 )
 
 go
@@ -170,7 +170,8 @@ barcode nvarchar(12) not null,
 name nvarchar(12) not null,
 description nvarchar(120),
 price int not null,
-primary key(barcode)
+branch_name nvarchar(15) not null,
+primary key(barcode, branch_name)
 )
 
 go
