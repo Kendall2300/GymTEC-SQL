@@ -37,6 +37,10 @@ alter table Lesson
 add constraint Lesson_Service_FK foreign key (service_id)
 REFERENCES Service(service_id);
 
+alter table Lesson
+add constraint Lesson_Branch_Name_FK foreign key (branch_name)
+REFERENCES Branch(branch_name);
+
 alter table Gear_avalible
 add constraint Gear_avalible__FK foreign key (gear_id)
 REFERENCES Gear_type(gear_id);
@@ -53,16 +57,14 @@ alter table Branch_Phone
 add constraint Branch_Phone_Branch_Name_FK foreign key (branch_name)
 REFERENCES Branch(branch_name);
 
-alter table Treatment
-add constraint Treatment_Branch_Name_FK foreign key (branch_name)
+alter table Spa_Treatment
+add constraint SpaTreatment_Branch_Name_FK foreign key (branch_name)
 REFERENCES Spa(branch_name);
 
 alter table Product
 add constraint Product_Branch_Name_FK foreign key (branch_name)
 REFERENCES Shop(branch_name);
 
-alter table Service
-add constraint Service_Branch_Name_FK foreign key (branch_name)
-REFERENCES Branch(branch_name);
+
 
 

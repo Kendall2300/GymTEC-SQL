@@ -78,10 +78,8 @@ go
 if not exists (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'Service')
 create table Service(
 service_id char(2) not null,
-service_type nvarchar(20) not null,
-service_name nvarchar(30) not null,
-branch_name nvarchar(15) not null,
-primary key(service_id, branch_name)
+service_description nvarchar(30) not null,
+primary key(service_id)
 )
 
 go
@@ -101,7 +99,6 @@ if not exists (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo
 create table Spa(
 branch_name nvarchar(15) not null,
 status char not null,
-treatment_id int not null,
 primary key(branch_name)
 )
 
@@ -122,11 +119,11 @@ if not exists (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo
 create table Lesson(
 lesson_id int not null,
 quotas int not null,
-type char not null,
 search_begin date,
 search_end date,
 start_date date, 
 end_date date, 
+branch_name nvarchar(15) not null,
 instructor_id char(9) not null,
 service_id char(2) not null,
 primary key(lesson_id)
@@ -156,10 +153,19 @@ go
 
 if not exists (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'Treatment')
 create table Treatment(
+treatment_id char(2) not null,
+treatment_description nvarchar(120),
+primary key(treatment_id)
+)
+
+go
+
+if not exists (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'Spa_Treatment')
+create table Spa_Treatment(
 branch_name nvarchar(15) not null,
-name nvarchar(12) not null,
-description nvarchar(120),
-primary key(name, branch_name)
+treat_id nvarchar(12) not null,
+id int,
+primary key(branch_name, id)
 )
 
 go
