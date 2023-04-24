@@ -24,6 +24,7 @@ FLname nvarchar(15) not null,
 SLname nvarchar(15) not null,
 Workstaion_id char(2) not null,
 form_id char(2) not null, 
+branch_name nvarchar(15),
 primary key(id)
 )
 
@@ -65,7 +66,7 @@ create table Branch(
 province nvarchar(15) not null,
 district nvarchar(15) not null,
 canton nvarchar(15) not null,
-id_emp_admin char(9) not null,
+id_emp_admin char(9),
 branch_name nvarchar(15) not null,
 max_capacity int not null,
 openDate date,
