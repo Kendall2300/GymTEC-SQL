@@ -66,7 +66,6 @@ create table Branch(
 province nvarchar(15) not null,
 district nvarchar(15) not null,
 canton nvarchar(15) not null,
-id_emp_admin char(9),
 branch_name nvarchar(15) not null,
 max_capacity int not null,
 openDate date,
@@ -110,7 +109,6 @@ if not exists (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo
 create table Shop(
 branch_name nvarchar(15) not null,
 status char not null,
-gear_id int not null,
 primary key(branch_name)
 )
 
@@ -164,12 +162,14 @@ go
 if not exists (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'Spa_Treatment')
 create table Spa_Treatment(
 branch_name nvarchar(15) not null,
-treat_id nvarchar(12) not null,
+treat_id char(2) not null,
 id int,
 primary key(branch_name, id)
 )
 
 go
+
+
 
 if not exists (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'Product')
 create table Product(

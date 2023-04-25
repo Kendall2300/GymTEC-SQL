@@ -13,10 +13,6 @@ alter table Employee
 add constraint Form_ID_FK foreign key (form_id)
 REFERENCES Form(id);
 
-alter table Branch
-add constraint Branch_MGR_ID_FK foreign key (id_emp_admin)
-REFERENCES Employee(id);
-
 alter table Inventory
 add constraint Inventory_Gear_ID_FK foreign key (gear_id)
 REFERENCES Gear_avalible(gear_id);
@@ -60,6 +56,10 @@ REFERENCES Branch(branch_name);
 alter table Spa_Treatment
 add constraint SpaTreatment_Branch_Name_FK foreign key (branch_name)
 REFERENCES Spa(branch_name);
+
+alter table Spa_Treatment
+add constraint SpaTreatment_Treat_Id_FK foreign key (treat_id)
+REFERENCES Treatment(treatment_id);
 
 alter table Product
 add constraint Product_Branch_Name_FK foreign key (branch_name)
