@@ -29,7 +29,3 @@ VALUES
 
 
 select * from dbo.Treatment
-
-
-
-
