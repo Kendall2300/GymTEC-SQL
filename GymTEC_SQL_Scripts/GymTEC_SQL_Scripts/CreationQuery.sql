@@ -90,7 +90,8 @@ brand nvarchar(20) not null,
 serial_num int not null,
 price int not null,
 gear_id int not null,
-primary key(serial_num, brand)
+branch_name nvarchar(15) not null,
+primary key(serial_num, brand, branch_name)
 )
 
 go

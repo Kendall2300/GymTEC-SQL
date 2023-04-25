@@ -17,6 +17,10 @@ alter table Inventory
 add constraint Inventory_Gear_ID_FK foreign key (gear_id)
 REFERENCES Gear_avalible(gear_id);
 
+alter table Inventory
+add constraint Inventory_Branch_Name_FK foreign key (branch_name)
+REFERENCES Branch(branch_name);
+
 alter table Spa
 add constraint Spa_Branch_Name_FK foreign key (branch_name)
 REFERENCES Branch(branch_name);
