@@ -68,7 +68,7 @@ district nvarchar(15) not null,
 canton nvarchar(15) not null,
 branch_name nvarchar(15) not null,
 max_capacity int not null,
-openDate date,
+openDate nvarchar(120),
 branch_schedule nvarchar(150), 
 primary key(branch_name)
 )
@@ -119,10 +119,10 @@ if not exists (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo
 create table Lesson(
 lesson_id int not null,
 quotas int not null,
-search_begin date,
-search_end date,
-start_date date, 
-end_date date, 
+search_begin nvarchar(120),
+search_end nvarchar(120),
+start_date nvarchar(120), 
+end_date nvarchar(120), 
 branch_name nvarchar(15) not null,
 instructor_id char(9) not null,
 service_id char(2) not null,
@@ -204,7 +204,7 @@ Sname nvarchar(12) ,
 FLname nvarchar(15) not null,
 SLname nvarchar(15) not null,
 password nvarchar(24) not null,
-bdate date,
+bdate nvarchar(120),
 primary key(client_id)
 )
 
