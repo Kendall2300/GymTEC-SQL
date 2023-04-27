@@ -41,9 +41,9 @@ alter table Lesson
 add constraint Lesson_Branch_Name_FK foreign key (branch_name)
 REFERENCES Branch(branch_name);
 
-alter table Gear_avalible
-add constraint Gear_avalible__FK foreign key (gear_id)
-REFERENCES Gear_type(gear_id);
+alter table Gear_type
+add constraint Gear_type__FK foreign key (gear_id)
+REFERENCES Gear_avalible(gear_id);
 
 alter table Client_lesson
 add constraint Client_Lesson_client_id_FK foreign key (client_id)
