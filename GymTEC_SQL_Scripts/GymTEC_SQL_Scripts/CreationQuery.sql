@@ -91,7 +91,7 @@ serial_num int not null,
 price int not null,
 gear_id int not null,
 branch_name nvarchar(15) not null,
-primary key(serial_num, brand, branch_name)
+primary key(serial_num, branch_name)
 )
 
 go
@@ -131,7 +131,6 @@ primary key(lesson_id)
 
 go
 
---duda especifica de kendall
 if not exists (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'Gear_avalible')
 create table Gear_avalible(
 gear_id int not null,
@@ -205,6 +204,7 @@ FLname nvarchar(15) not null,
 SLname nvarchar(15) not null,
 password nvarchar(24) not null,
 bdate nvarchar(120),
+email nvarchar(120),
 primary key(client_id)
 )
 

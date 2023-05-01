@@ -109,6 +109,7 @@ select * from dbo.Client
 INSERT INTO Client_lesson(client_id,lesson_id) 
 VALUES 
 (369852147,1),
+(369852147,2),
 (789456123,2),
 (456789123,3)
 
